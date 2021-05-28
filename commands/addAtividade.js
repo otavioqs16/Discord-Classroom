@@ -1,4 +1,5 @@
 const Discord = require('discord.js')
+const activity = require('../activities')
 
 module.exports = {
     slash: 'both',
@@ -6,8 +7,9 @@ module.exports = {
     description: 'Testando slash commands',
     permissions: ["ADMINISTRATOR"],
     minArgs: 4,
+    maxArgs: 4,
     expectedArgs: '<tipo atividade> <descricao> <link> <nota>',
-    callback: ({message, args}) => {
+    callback: async ({message, args}) => {
         const embed = new Discord.MessageEmbed()
         const [tipo, desc, link, nota] = args;
         embed.setTitle(tipo)
@@ -21,6 +23,11 @@ module.exports = {
         if(message) {
             message.reply('', {embed})
         }
+
+        const addAct = await activity.addActivity(tipo, desc, link, nota)
+        console.log(addAct)
+
         return embed;
     } 
+
 }

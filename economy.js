@@ -3,8 +3,6 @@ const profileSchema = require('./profile-schema')
 
 const coinsCache = {}
 
-module.exports = (client) => {}
-
 module.exports.addCoins = async (guildId, userId, coins) => {
     return await mongo().then(async mongoose =>{
         try{

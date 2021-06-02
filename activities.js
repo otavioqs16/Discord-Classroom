@@ -15,7 +15,8 @@ module.exports.addActivity = async (tipoAtividade, desc, link, nota) => {
                 nota
             }, {
                 upsert: true,
-                new: true
+                new: true,
+                useFindAndModify: false
             })
 
             console.log('RESULT: ', result)

@@ -35,7 +35,7 @@ module.exports = {
                     embed.setColor('#6100e0')
                     embed.addField('Link ', results[i].link)
                     embed.addField('Nota ', results[i].nota)
-                    embed.setTimestamp()
+                    embed.setFooter('Data de entrega: ' + results[i].data + ' - ' + results[i].hora + 'hs')
 
                     message.reply(embed)
                     

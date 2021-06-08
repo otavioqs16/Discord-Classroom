@@ -12,8 +12,9 @@ const activitieSchema = mongoose.Schema({
     nota: {
         type: Number,
         required: true
-    }
-    
+    },
+    data: reqString,
+    hora: reqString
 })
 
 module.exports = mongoose.model('atividades', activitieSchema)

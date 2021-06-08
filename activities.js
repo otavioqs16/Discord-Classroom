@@ -28,3 +28,18 @@ module.exports.addActivity = async (tipoAtividade, desc, link, nota, data, hora)
         }
     }) 
 }
+
+module.exports.delActivity = async (tipoAtividade, desc) => {
+    return await mongo().then(async mongoose =>{
+        try{
+            const result = await activitieSchema.findOneAndDelete({
+                tipoAtividade: tipoAtividade,
+                desc: desc
+            })
+            return result
+        }finally{
+            mongoose.connection.close()
+        }
+        
+    })
+}

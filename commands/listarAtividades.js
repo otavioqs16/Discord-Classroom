@@ -5,11 +5,11 @@ const activitieSchema = require('../activities-schema')
 module.exports = {
     description: 'Listar atividades',
     minArgs: 1,
-    maxArgs: 1,
     syntaxError: 'Comando inválido! Use `{PREFIX}`listarAtividades {ARGUMENTS}',
     expectedArgs: '<tipo atividade>',
     callback: async ({message, args}) =>{
-        const [tipoAtividade] = args;
+        console.log(args)
+        const tipoAtividade = args.join(' ')
         console.log(tipoAtividade)
         return await mongo().then(async mongoose => {
             try{

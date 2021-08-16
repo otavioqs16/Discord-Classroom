@@ -1,0 +1,38 @@
+const Discord = require("discord.js")
+const notas = require('../notas')
+
+module.exports = {
+    slash: 'both',
+    testOnly: true,
+    description: 'Adicionar nota ao aluno',
+    minArgs: 4,
+    maxArgs: 4,
+    expectedArgs: '<nome aluno> <tipo atividade> <descricao atividade> <nota>',
+    callback: async({message, args}) => {
+        const embed = new Discord.MessageEmbed()
+        const [nome, tipoAtividade, desc, nota] = args;
+        const addNota = await notas.addNota(nome, tipoAtividade, desc, nota)
+        console.log('ADD NOTA: ', addNota)
+        if(!addNota){
+            embed.setTitle('ATIVIDADE NÃO ENCONTRADA')
+            embed.setDescription(`**Tipo de atividade:** ${tipoAtividade} \n**Descrição:** ${desc}`)
+            embed.setThumbnail('https://img.icons8.com/color/452/error--v1.png')
+            embed.addField('Dica:', 'Utilize ``!listarAtividades <tipo da atividade>`` para checar as atividades existentes.')
+        }else{
+            embed.setTitle(`Tipo de Atividade: ${tipoAtividade}`)
+            embed.setDescription(`**Descrição:** ${desc}`)
+            embed.setThumbnail('https://www.csvp.com.br/wp-content/uploads/2018/05/icone-prova.png')
+            embed.addField('Nome Aluno:', nome)
+            embed.addField('Nota:', nota)
+            embed.setColor('#2ba61e')
+        }
+
+        if(message) {
+            message.reply('', {embed})
+        }
+    
+        return embed;
+        
+    }
+}
+        

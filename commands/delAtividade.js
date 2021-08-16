@@ -12,20 +12,19 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
         const [tipoAtividade, desc] = args;
         
-        const del = await activity.delActivity(tipoAtividade, desc)
-        console.log(del)
+        const delAct = await activity.delActivity(tipoAtividade, desc)
+        console.log('DELETANDO ATIVIDADE: ', delAct)
 
-        if(del === null){
-            embed.setTitle('Atividade não encontrada!')
+        if(delAct === null){
+            embed.setTitle('ATIVIDADE NÃO ENCONTRADA')
             embed.setDescription(`**Tipo de atividade:** ${tipoAtividade} \n**Descrição:** ${desc}`)
-            embed.setColor('#2866c9')
-            embed.setTimestamp()
+            embed.setThumbnail('https://img.icons8.com/color/452/error--v1.png')
+            embed.addField('Dica:', 'Utilize ``!listarTiposAtividade`` para checar os tipos de atividades existentes.')
         }else{
-
-            embed.setTitle('Atividade excluída com sucesso!')
+            embed.setTitle('ATIVIDADE EXCLUÍDA COM SUCESSO')
             embed.setDescription(`**Tipo de atividade:** ${tipoAtividade} \n**Descrição:** ${desc}`)
             embed.setColor("#d60000")
-            embed.setTimestamp()
+            embed.setThumbnail('https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png')
         }
 
         if(message){

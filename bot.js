@@ -11,12 +11,12 @@ client.on("ready", async () => {
 
     await mongo().then((mongoose) => {
         try{
-            console.log('Connectecd to mongoDB')
+            console.log('Conexão estabelecida com o banco de dados')
         } finally{
             mongoose.connection.close()
         }
     })
-
+    
     new WOKCommands(client, {
         commandsDir: 'commands',
         testServers: [guildId],

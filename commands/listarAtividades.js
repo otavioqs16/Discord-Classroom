@@ -8,34 +8,36 @@ module.exports = {
     syntaxError: 'Comando inválido! Use `{PREFIX}`listarAtividades {ARGUMENTS}',
     expectedArgs: '<tipo atividade>',
     callback: async ({message, args}) =>{
-        console.log(args)
+        const embed = new Discord.MessageEmbed()
         const tipoAtividade = args.join(' ')
-        console.log(tipoAtividade)
+        console.log('TIPO ATIVIDADE: ', tipoAtividade)
         return await mongo().then(async mongoose => {
             try{
-                console.log('Running findOne()')
-    
-                const results = await activitieSchema.find({tipoAtividade})
-                if(results.length <= 0){
-                    message.reply('Esse tipo de atividade não existe!')
+                const atividade = await activitieSchema.find({tipoAtividade})
+                if(atividade.length <= 0){
+                    embed.setTitle('ATIVIDADE NÃO ENCONTRADA')
+                    embed.setDescription(`**Tipo de atividade:** ${tipoAtividade}`)
+                    embed.setThumbnail('https://img.icons8.com/color/452/error--v1.png')
+                    embed.addField('Dica:', 'Utilize ``!listarTiposAtividade`` para checar os tipos de atividades existentes.')
+                    message.reply(embed)
                 }
-                for(const i in results){
-                    console.log(`index: ${i}
-                    tipoAtividade: ${results[i].tipoAtividade}
-                    desc: ${results[i].desc}
-                    link: ${results[i].link}
-                    nota: ${results[i].nota}
+                for(const i in atividade){
+                    console.log(`
+                    tipoAtividade: ${atividade[i].tipoAtividade}
+                    desc: ${atividade[i].desc}
+                    link: ${atividade[i].link}
+                    nota: ${atividade[i].nota}
                     `)
 
                     const receivedEmbed = message.embeds[0]
                     const embed = new Discord.MessageEmbed(receivedEmbed)
-                    .setTitle(results[i].tipoAtividade)
-                    embed.setThumbnail('https://www.csvp.com.br/wp-content/uploads/2018/05/icone-prova.png')
-                    embed.setDescription(results[i].desc)
+                    .setTitle(atividade[i].tipoAtividade)
+                    embed.setThumbnail('https://image.freepik.com/free-vector/education-test-icon-set_108855-1414.jpg')
+                    embed.setDescription(atividade[i].desc)
                     embed.setColor('#6100e0')
-                    embed.addField('Link ', results[i].link)
-                    embed.addField('Nota ', results[i].nota)
-                    embed.setFooter('Data de entrega: ' + results[i].data + ' - ' + results[i].hora + 'hs')
+                    embed.addField('Link ', atividade[i].link)
+                    embed.addField('Nota ', atividade[i].nota)
+                    embed.setFooter('Data de entrega: ' + atividade[i].data + ' - ' + atividade[i].hora + 'hs')
 
                     message.reply(embed)
                     

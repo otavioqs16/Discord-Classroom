@@ -6,7 +6,7 @@ const Discord = require('discord.js')
 module.exports = {
     slash: 'both',
     testOnly: true,
-    description: 'Listar a nota total de determinado aluno',
+    description: 'Informa a nota total de determinado aluno',
     minArgs: 1,
     maxArgs: 1,
     expectedArgs: '<nome aluno>',

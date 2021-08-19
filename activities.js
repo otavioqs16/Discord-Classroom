@@ -1,5 +1,6 @@
 const mongo = require('./mongo')
 const activitieSchema = require('./activities-schema')
+const notaSchema = require('./notas-schema')
 
 module.exports.addActivity = async (tipoAtividade, desc, link, nota, data, hora) => {
     return await mongo().then(async mongoose =>{
@@ -31,6 +32,10 @@ module.exports.delActivity = async (tipoAtividade, desc) => {
     return await mongo().then(async mongoose =>{
         try{
             const result = await activitieSchema.findOneAndDelete({
+                tipoAtividade: tipoAtividade,
+                desc: desc
+            })
+            const result2 = await notaSchema.deleteMany({
                 tipoAtividade: tipoAtividade,
                 desc: desc
             })

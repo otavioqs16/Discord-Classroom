@@ -1,5 +1,5 @@
 const mongo = require('./mongo')
-const alunoSchema = require('./alunos-schema')
+const notaSchema = require('./notas-schema')
 const activitieSchema = require('./activities-schema')
 
 module.exports.addNota = async (nome, tipoAtividade, desc, nota) => {
@@ -10,7 +10,7 @@ module.exports.addNota = async (nome, tipoAtividade, desc, nota) => {
                 console.log('Esse tipo de atividade não existe!') 
                 return
             }
-            const result = await alunoSchema.findOneAndUpdate({
+            const result = await notaSchema.findOneAndUpdate({
                 nome,
                 tipoAtividade,
                 desc
@@ -29,20 +29,5 @@ module.exports.addNota = async (nome, tipoAtividade, desc, nota) => {
         }finally{
             mongoose.connection.close();
         }
-    })
-}
-
-module.exports.delNota = async (tipoAtividade, desc) => {
-    return await mongo().then(async mongoose =>{
-        try{
-            const result = await alunoSchema.findOneAndDelete({
-                tipoAtividade: tipoAtividade,
-                desc: desc
-            })
-            return result
-        }finally{
-            mongoose.connection.close()
-        }
-        
     })
 }

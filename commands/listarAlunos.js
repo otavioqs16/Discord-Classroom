@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const alunosSchema = require('../alunos-schema')
+const alunosSchema = require('../aluno-schema')
 const mongo = require('../mongo')
 
 module.exports = {
@@ -8,7 +8,6 @@ module.exports = {
     description: 'Listar todos os alunos cadastrados',
     callback: async ({message}) => {
         var alunos = []
-        var alunosUnico = []
         const embed = new Discord.MessageEmbed()
         return await mongo().then(async mongoose => {
             try{
@@ -16,13 +15,13 @@ module.exports = {
                 console.log('ALUNOS ENCONTRADOS:', aluno)
                 for(const i in aluno){
                     alunos.push(aluno[i].nome)
-                    alunosUnico = [...new Set(alunos)]
                 }
-                console.log('LISTA ALUNOS:', alunosUnico)
+                console.log('LISTA ALUNOS:', alunos)
                 embed.setTitle('ALUNOS CADASTRADOS')
-                embed.setDescription(alunosUnico)
+                embed.setDescription(alunos)
                 embed.setThumbnail('https://w7.pngwing.com/pngs/744/327/png-transparent-education-computer-icons-school-student-school-angle-rectangle-graduation-ceremony.png')
                 embed.setColor('#006e68')
+                embed.addField('Dica:', 'Utilize ``/infoAluno`` para checar as informações de um aluno especifico.')
 
                 if(message){
                     message.reply('', {embed})

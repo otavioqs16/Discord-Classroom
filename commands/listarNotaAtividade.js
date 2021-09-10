@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const mongo = require('../mongo')
-const alunoSchema = require('../alunos-schema')
+const notaSchema = require('../notas-schema')
 const activitiesSchema = require('../activities-schema')
 
 module.exports = {
@@ -26,27 +26,28 @@ module.exports = {
                     console.log('REPOSITÓRIO: ', repository)
                     tipoAtividade = repository.join(' ')
                     console.log('TIPO ATIVIDADE ATUAL: ', tipoAtividade)
-                    const result = await alunoSchema.find({tipoAtividade})
+                    const result = await notaSchema.find({tipoAtividade})
                     console.log('TIPO ATIVIDADE ENCONTRADO: ', result)
                     if(result.length > 0){
                         split = clone.slice(i)
                         split = split.slice(1)
                         desc = split.join(' ')
                         console.log('DESC: ', desc)
-                        const descAtividade = await alunoSchema.find({desc})
+                        const descAtividade = await notaSchema.find({desc})
                         console.log('DESC ATIVIDADE: ', descAtividade)
                         break;
                     }
                     console.log('REPOSITÓRIO ATUAL: ', repository)
                 }
                 
-                const atividadeEncontrada = await alunoSchema.find({tipoAtividade, desc})
+                const atividadeEncontrada = await notaSchema.find({tipoAtividade, desc})
                 console.log('ATIVIDADE ENCONTRADA: ', atividadeEncontrada)
                 if(atividadeEncontrada.length <= 0){
                     invalido.setTitle('ATIVIDADE NÃO ENCONTRADA')
                     invalido.setDescription(`**Tipo de atividade:** ${tipoAtividade} \n**Descrição:** ${desc}`)
+                    invalido.setColor('#ffec5c')
                     invalido.setThumbnail('https://img.icons8.com/color/452/error--v1.png')
-                    invalido.addField('Dica:', 'Utilize ``!listarTiposAtividade`` para checar os tipos de atividades existentes.')
+                    invalido.addField('Dica:', 'Utilize ``/listarTiposAtividade`` para checar os tipos de atividades existentes.')
                     message.reply(invalido)
                     return
                 }

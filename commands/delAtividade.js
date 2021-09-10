@@ -18,11 +18,16 @@ module.exports = {
         if(delAct === null){
             embed.setTitle('ATIVIDADE NÃO ENCONTRADA')
             embed.setDescription(`**Tipo de atividade:** ${tipoAtividade} \n**Descrição:** ${desc}`)
+            embed.setColor('#ffec5c')
             embed.setThumbnail('https://img.icons8.com/color/452/error--v1.png')
-            embed.addField('Dica:', 'Utilize ``!listarTiposAtividade`` para checar os tipos de atividades existentes.')
+            embed.addField('Dica:', 'Utilize ``/listarTiposAtividade`` para checar os tipos de atividades existentes.')
         }else{
             embed.setTitle('ATIVIDADE EXCLUÍDA COM SUCESSO')
-            embed.setDescription(`**Tipo de atividade:** ${tipoAtividade} \n**Descrição:** ${desc}`)
+            embed.addField('Tipo de Atividade', delAct.tipoAtividade)
+            embed.addField('Descrição', delAct.desc)
+            embed.addField('Link', delAct.link)
+            embed.addField('Nota', delAct.nota)
+            embed.setFooter('Data de entrega: ' + delAct.data + " - " + delAct.hora + 'hs')
             embed.setColor("#d60000")
             embed.setThumbnail('https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png')
         }

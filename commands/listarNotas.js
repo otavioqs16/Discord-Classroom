@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const mongo = require('../mongo')
-const alunoSchema = require('../alunos-schema')
+const notaSchema = require('../notas-schema')
+const alunoSchema = require('../aluno-schema')
 const activitiesSchema = require('../activities-schema')
 
 module.exports = {
@@ -17,15 +18,25 @@ module.exports = {
         return await mongo().then(async mongoose => {
             try{
                 console.log('Checando se o aluno exite no BD')
-                const aluno = await alunoSchema.find({nome})
-                console.log('NOTAS ALUNO: ', aluno)
-                if(aluno.length <= 0){
+                const ifAluno = await alunoSchema.find({nome})
+                console.log('ALUNO ENCONTRADO:', ifAluno)
+                if(ifAluno <= 0){
                     invalido.setTitle('ALUNO NÃO CADASTRADO')
                     invalido.setDescription(`**Nome:** ${nome}`)
                     invalido.setThumbnail('https://img.icons8.com/color/452/error--v1.png')
-                    invalido.addField('Dica:', 'Utilize ``!listarAlunos`` para checar os alunos cadastrados.')
+                    invalido.setColor('#ffec5c')
+                    invalido.addField('Dica:', 'Utilize ``/listarAlunos`` para checar os alunos cadastrados.')
                     message.reply(invalido)
                     return
+                }
+                const aluno = await notaSchema.find({nome})
+                console.log('NOTAS ALUNO: ', aluno)
+                if(aluno.length <= 0){
+                    invalido.setTitle('O ALUNO AINDA NÃO REALIZOU NENHUMA ATIVIDADE')
+                    invalido.setDescription(`**Nome:** ${nome}`)
+                    invalido.setThumbnail('https://img.icons8.com/color/452/error--v1.png')
+                    invalido.setColor('#ffec5c')
+                    message.reply(invalido)
                 }
                 for(const i in aluno){
                     desc = aluno[i].desc

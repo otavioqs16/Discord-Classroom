@@ -22,7 +22,8 @@ module.exports = {
                     embed.setTitle('ATIVIDADE NÃO ENCONTRADA')
                     embed.setDescription(`**Tipo de atividade:** ${tipoAtividade} \n**Descrição:** ${desc}`)
                     embed.setThumbnail('https://img.icons8.com/color/452/error--v1.png')
-                    embed.addField('Dica:', 'Utilize ``/listarTipo`` para checar as atividades relacionadas a este tipo de atividade.')
+                    embed.setColor('#ffec5c')
+                    embed.addField('Dica:', 'Utilize ``/listarTipo <tipo atividade>`` para checar as atividades relacionadas a este tipo de atividade.')
                     return embed;
                 }
                 embed.setTitle(atividade[0].tipoAtividade)

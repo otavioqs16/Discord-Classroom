@@ -15,7 +15,7 @@ Para explicar os comandos que o bot possui, vou dividir em quatro sessões:
 - Notas
 
 ### Alunos
-Não se tem uma turma se não haver alunos, certo? Então, vamos começar com os comandos destinados aos alunos:
+Não se tem uma turma se não houver alunos, certo? Então, vamos começar com os comandos destinados aos alunos:
 - /addAluno - Adiciona um novo aluno
 - /listarAlunos - Lista todos os alunos cadastrados
 - /infoAluno - Mostra as informações de um aluno específico

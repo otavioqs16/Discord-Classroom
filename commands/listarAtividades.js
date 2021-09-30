@@ -17,8 +17,9 @@ module.exports = {
                 if(atividade.length <= 0){
                     embed.setTitle('ATIVIDADE NÃO ENCONTRADA')
                     embed.setDescription(`**Tipo de atividade:** ${tipoAtividade}`)
+                    embed.setColor('#ffec5c')
                     embed.setThumbnail('https://img.icons8.com/color/452/error--v1.png')
-                    embed.addField('Dica:', 'Utilize ``!listarTiposAtividade`` para checar os tipos de atividades existentes.')
+                    embed.addField('Dica:', 'Utilize ``/listarTiposAtividade`` para checar os tipos de atividades existentes.')
                     message.reply(embed)
                 }
                 for(const i in atividade){

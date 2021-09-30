@@ -1,5 +1,5 @@
 const mongo = require('../mongo')
-const alunoSchema = require('../alunos-schema')
+const notaSchema = require('../notas-schema')
 const activitieSchema = require('../activities-schema')
 const Discord = require('discord.js')
 
@@ -20,13 +20,14 @@ module.exports = {
         var atividadesTotal = 0
         return await mongo().then(async mongoose => {
             try{
-                const aluno = await alunoSchema.find({nome})
+                const aluno = await notaSchema.find({nome})
                 console.log('ALUNO:', aluno)
                 if(aluno.length <= 0){
                     embed.setTitle('ALUNO NÃO CADASTRADO')
                     embed.setDescription(`**Nome:** ${nome}`)
+                    embed.setColor('#ffec5c')
                     embed.setThumbnail('https://img.icons8.com/color/452/error--v1.png')
-                    embed.addField('Dica:', 'Utilize ``!listarAlunos`` para checar os alunos cadastrados.')
+                    embed.addField('Dica:', 'Utilize ``/listarAlunos`` para checar os alunos cadastrados.')
                     return embed;
                 }
                 for(const i in aluno){

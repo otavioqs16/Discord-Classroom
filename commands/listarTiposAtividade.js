@@ -23,6 +23,7 @@ module.exports = {
                 embed.setDescription(tiposUnico)
                 embed.setThumbnail('https://image.freepik.com/free-vector/education-test-icon-set_108855-1414.jpg')
                 embed.setColor('#006e68')
+                embed.addField('Dica:', 'Utilize ``/listarTipo`` para checar as atividades relacionadas a um tipo de atividade.')
                 
                 if(message){
                     message.reply('', {embed})

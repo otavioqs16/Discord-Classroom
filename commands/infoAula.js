@@ -18,7 +18,7 @@ module.exports = {
                 console.log('AULA ENCONTRADA:', findAula)
                 if(findAula <= 0){
                     embed.setTitle('AULA NÃO ENCONTRADA')
-                    embed.addField('Aula:', aula)
+                    embed.setDescription(`**Aula:** ${aula}`)
                     embed.setThumbnail('https://img.icons8.com/color/452/error--v1.png')
                     embed.setColor('#ffec5c')
                     embed.addField('Dica:', 'Utilize ``/listarAulas`` para checar as aulas postadas.')

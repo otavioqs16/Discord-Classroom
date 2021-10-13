@@ -39,3 +39,20 @@ module.exports.delAluno = async (nome) => {
         }
     })
 }
+
+module.exports.editAluno = async(nome, nomeNovo, email, ra) => {
+    return await mongo().then(async mongoose => {
+        try{
+            const result = await alunoSchema.updateOne({
+                nome: nome
+            }, {
+                nome: nomeNovo,
+                email: email,
+                ra: ra
+            })
+            return result;
+        } finally{
+            mongoose.connection.close();
+        }
+    })
+}

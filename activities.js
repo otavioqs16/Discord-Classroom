@@ -46,3 +46,24 @@ module.exports.delActivity = async (tipoAtividade, desc) => {
         
     })
 }
+
+module.exports.editActivity = async (tipoAtividade, desc, novoTipo, novaDesc, link, nota, data, hora) => {
+    return await mongo().then(async mongoose => {
+        try{
+            const result = await activitieSchema.updateOne({
+                tipoAtividade: tipoAtividade,
+                desc: desc
+            },{
+                tipoAtividade: novoTipo,
+                desc: novaDesc,
+                link: link,
+                nota: nota,
+                data: data,
+                hora: hora
+            })
+            return result
+        } finally{
+            mongoose.connection.close()
+        }
+    })
+}

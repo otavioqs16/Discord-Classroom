@@ -31,3 +31,39 @@ module.exports.addNota = async (nome, tipoAtividade, desc, nota) => {
         }
     })
 }
+
+module.exports.editNota = async (nome, tipoAtividade, desc, novaNota) => {
+    return await mongo().then(async mongoose => {
+        try{
+            const result = await notaSchema.updateOne({
+                nome: nome,
+                tipoAtividade: tipoAtividade,
+                desc: desc
+            }, {
+                nome: nome, 
+                tipoAtividade: tipoAtividade,
+                desc: desc,
+                nota: novaNota
+            })
+            
+            return result;
+        } finally{
+            mongoose.connection.close();
+        }
+    })
+}
+
+module.exports.delNota = async (nome, tipoAtividade, desc) => {
+    return await mongo().then(async mongoose => {
+        try{
+            const result = await notaSchema.findOneAndDelete({
+                nome: nome,
+                tipoAtividade: tipoAtividade,
+                desc: desc
+            })
+            return result;
+        } finally{
+            mongoose.connection.close();
+        }
+    })
+}

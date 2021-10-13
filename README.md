@@ -44,7 +44,7 @@ Para postar as aulas gravadas, ou enviar o link das aulas síncronas, temos os s
 Para postar as atividades aos alunos, temos os seguintes comandos:
 - /addAtividade - Adiciona uma nova atividade
 ![](https://imgur.com/HtQQA83.png)
-- !listarAtividades - Lista as atividades cadastradas
+- !listarAtividades - Lista as atividades cadastradas de determinado tipo
 ![](https://imgur.com/1nz9cPO.png)
 - /listarTiposAtividade - Lista todos os tipos de atividades
 ![](https://imgur.com/hmqE1zn.png)

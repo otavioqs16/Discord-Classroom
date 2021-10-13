@@ -70,4 +70,4 @@ Para avaliar as atividades postadas, temos os seguintes comandos:
 - /editarNota - Edita as informações de uma nota
 ![](https://imgur.com/41VfuLn.png)
 - /delNota - Deleta uma nota
--![](https://imgur.com/GLK4FuK.png)
+![](https://imgur.com/GLK4FuK.png)

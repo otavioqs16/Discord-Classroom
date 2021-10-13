@@ -8,7 +8,7 @@ Discord é uma plataforma gratuita de comunicação que permite a troca de mensa
 O Discord Classroom nada mais é que um servidor voltado para educação, replicando um Sistema de Gestão da Aprendizagem, com um bot específico que automatiza e facilita tudo através de simples comandos.
 
 ## Comandos
-Para explicar os comandos que o bot possui, vou dividir em quatro sessões:
+Para explicar os comandos que o bot possui, todos exemplificados com imagens, vou dividir em quatro sessões:
 - Alunos
 - Aulas
 - Atividades

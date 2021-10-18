@@ -37,7 +37,7 @@ Existem duas maneiras de criar uma conta na plataforma, ambas muito simples e r�
 ![](https://imgur.com/8imdIZl.png)
 
 ## Implementar o Discord Classroom em seu servidor
-Até o atual momento, para implementar o bot em seu servidor é necessário entrar em contato
+Até o atual momento, para implementar meu bot em seu servidor é necessário entrar em contato comigo pelo e-mail otavioqs16@gmail.com. Dependendo dos resultados obtidos, posteriormente esse processo será automatizado e menos trabalhoso.
 
 ## Comandos
 Para explicar os comandos que o bot possui, todos exemplificados com imagens, vou dividir em quatro sessões:

@@ -17,7 +17,7 @@ Existem duas maneiras de criar uma conta na plataforma, ambas muito simples e r�
 - **Passo 3**: insira um nome para o perfil, e-mail e senha. Em seguida, clique em "Criar uma conta";
 ![](https://imgur.com/Wyq2qfT.png)
 - **Passo 4**: assim como nos computadores, o Discord irá oferecer a possibilidade de criar um servidor. Escolha entre ter o próprio ou usar os templates disponibilizados;
-![]( https://imgur.com/r7xVp7P.png)
+![](https://imgur.com/r7xVp7P.png)
 - **Passo 5**: abra o menu lateral e selecione o ícone do perfil para abrir as opções;
 ![](https://imgur.com/HmPAn8e.png)
 - **Passo 6**: em "Minha conta", é possível fazer alterações no perfil.
@@ -35,6 +35,9 @@ Existem duas maneiras de criar uma conta na plataforma, ambas muito simples e r�
 ![](https://imgur.com/JhN1O5X.png)
 - **Passo 6**: em "Minha conta", clique no botão "Editar" para alterar informações sobre o perfil.
 ![](https://imgur.com/56c5p0Z.png)
+
+## Implementar o Discord Classroom em seu servidor
+Até o atual momento, para implementar o bot em seu servidor é necessário entrar em contato
 
 ## Comandos
 Para explicar os comandos que o bot possui, todos exemplificados com imagens, vou dividir em quatro sessões:

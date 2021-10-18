@@ -10,19 +10,6 @@ O Discord Classroom nada mais é que um servidor voltado para educação, replic
 ## Como criar uma conta no Discord?
 Existem duas maneiras de criar uma conta na plataforma, ambas muito simples e rápidas. A primeira forma é pelo aplicativo e a segunda, pelo computador, podendo ser pelo programa ou pela versão web.
 
-#### Discord no celular
-- **Passo 1**: baixe o app do Discord na Play Store ou App Store;
-- **Passo 2**: abra o aplicativo e clique em "Registre-se";
-![](https://imgur.com/MsIsQhH.png)
-- **Passo 3**: para criar uma conta baste inserir um nome para o perfil, e-mail e senha;
-![](https://imgur.com/Wyq2qfT.png)
-- **Passo 4**: assim como nos computadores, o Discord irá oferecer a possibilidade de criar um servidor. Escolha entre ter o próprio ou usar os templates disponibilizados;
-![](https://imgur.com/r7xVp7P.png)
-- **Passo 5**: abra o menu lateral e selecione o ícone do perfil para abrir as opções;
-![](https://imgur.com/HmPAn8e.png)
-- **Passo 6**: em "Minha conta", é possível fazer alterações no perfil.
-![](https://imgur.com/8imdIZl.png)
-
 #### Discord no computador
 - **Passo 1**: acesse o Discord através do site oficial ou baixando a versão para desktop;
 - **Passo 2**: clique no botão "Entrar", no topo da tela. Na tela de login, clique em "Registre-se";
@@ -35,6 +22,19 @@ Existem duas maneiras de criar uma conta na plataforma, ambas muito simples e r�
 ![](https://imgur.com/JhN1O5X.png)
 - **Passo 6**: em "Minha conta", clique no botão "Editar" para alterar informações sobre o perfil.
 ![](https://imgur.com/56c5p0Z.png)
+
+#### Discord no celular
+- **Passo 1**: baixe o app do Discord na Play Store ou App Store;
+- **Passo 2**: abra o aplicativo e clique em "Registre-se";
+![](https://imgur.com/MsIsQhH.png)
+- **Passo 3**: para criar uma conta basta inserir um nome para o perfil, e-mail e senha;
+![](https://imgur.com/Wyq2qfT.png)
+- **Passo 4**: assim como nos computadores, o Discord irá oferecer a possibilidade de criar um servidor. Escolha entre ter o próprio ou usar os templates disponibilizados;
+![](https://imgur.com/r7xVp7P.png)
+- **Passo 5**: abra o menu lateral e selecione o ícone do perfil para abrir as opções;
+![](https://imgur.com/HmPAn8e.png)
+- **Passo 6**: em "Minha conta", é possível fazer alterações no perfil.
+![](https://imgur.com/8imdIZl.png)
 
 ## Implementar o Discord Classroom em seu servidor
 Até o atual momento, para implementar o bot em seu servidor é necessário entrar em contato

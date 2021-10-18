@@ -14,7 +14,7 @@ Existem duas maneiras de criar uma conta na plataforma, ambas muito simples e r�
 - **Passo 1**: baixe o app do Discord na Play Store ou App Store;
 - **Passo 2**: abra o aplicativo e clique em "Registre-se";
 ![](https://imgur.com/MsIsQhH.png)
-- **Passo 3**: insira um nome para o perfil, e-mail e senha. Em seguida, clique em "Criar uma conta";
+- **Passo 3**: para criar uma conta baste inserir um nome para o perfil, e-mail e senha;
 ![](https://imgur.com/Wyq2qfT.png)
 - **Passo 4**: assim como nos computadores, o Discord irá oferecer a possibilidade de criar um servidor. Escolha entre ter o próprio ou usar os templates disponibilizados;
 ![](https://imgur.com/r7xVp7P.png)

@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wpp{
+    height: 1080px;
+    width: 100%;
+    background: url("img/tcompleto.jpg!d") no-repeat center center;
+    background-size: cover;
+    margin-top: -100px;
+}
+
+.intro{
+    text-align: center;
+    margin-top: 10vh;
+    color:#0E0325;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    text-shadow: 2px 2px 3px #DDC3EF;
+}
+
+.sobre{
+    background-color:#070918;
+    height: 19000px;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: azure;
+}
+
+#sobre-content{
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: azure;
+}
+
+#tutorial-content{
+    margin-top: 40px;
+}
+
+hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card{
+    margin-left: 37%;
+    background-color: #e3d5ee;
+}
+
+.card-text{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:#070918;
+}
+
+#list-example{
+    margin-left: 25%;
+}
+
+.list-group-item{
+    background-color: #e3d5ee;
+}

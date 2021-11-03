@@ -4,7 +4,7 @@
 }
 
 .wpp{
-    height: 1080px;
+    height: 100vh;
     width: 100%;
     background: url("img/tcompleto.jpg!d") no-repeat center center;
     background-size: cover;
@@ -51,11 +51,17 @@ hr{
     margin: auto;
     align-items: center;
     background-color: #e3d5ee;
+    width: 30%;
+}
+
+#command-card{
+    width: 60%;
 }
 
 .card-text{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:#070918;
+    margin: auto;
 }
 
 #list-example{
@@ -65,3 +71,15 @@ hr{
 .list-group-item{
     background-color: #e3d5ee;
 }
+
+@media (max-width: 768px){
+    .card{
+        width: 40vh;
+    }
+
+    #command-card{
+        width: 30vh;
+    }
+    
+}
+

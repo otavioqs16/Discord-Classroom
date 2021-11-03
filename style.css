@@ -22,7 +22,7 @@
 
 .sobre{
     background-color:#070918;
-    height: 19000px;
+    height: 100%;
     text-align: center;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: azure;
@@ -48,7 +48,8 @@ hr{
 }
 
 .card{
-    margin-left: 37%;
+    margin: auto;
+    align-items: center;
     background-color: #e3d5ee;
 }
 
